@@ -9,7 +9,6 @@
 
 using namespace std;
 
-// ---------- دوال الإدخال ----------
 static string readLine(const string& prompt) {
     cout << prompt;
     string line;
@@ -46,7 +45,6 @@ static bool readDouble(const string& prompt, double& value) {
     }
 }
 
-// ---------- دوال العرض ----------
 static void printProducts(const vector<Product*>& list) {
     if (list.empty()) {
         cout << "No products found.\n";
@@ -94,7 +92,6 @@ static void printOrders(const OrderService& service) {
     for (const auto& order : service.getOrders()) printOrder(order);
 }
 
-// ---------- قائمة العميل ----------
 static void customerMenu(Catalog& catalog, Cart& cart, OrderService& service) {
     while (true) {
         cout << "\n--- Customer Menu ---\n"
@@ -155,7 +152,6 @@ static void customerMenu(Catalog& catalog, Cart& cart, OrderService& service) {
     }
 }
 
-// ---------- قائمة الأدمن ----------
 static void adminMenu(Catalog& catalog, OrderService& service) {
     while (true) {
         cout << "\n--- Admin Menu ---\n"
@@ -214,7 +210,6 @@ static void adminMenu(Catalog& catalog, OrderService& service) {
     }
 }
 
-// ---------- البرنامج الرئيسي ----------
 static const string PRODUCTS_FILE = "data/products.txt";
 static const string ORDERS_FILE = "data/orders.txt";
 

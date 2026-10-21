@@ -60,7 +60,6 @@ bool Catalog::loadFromFile(const std::string& path) {
     std::ifstream in(path);
     if (!in) return false;
 
-    // نحمّل في قائمة مؤقتة، ولو فيه سطر تالف نتجاهله بدل ما البرنامج يقع
     std::vector<std::unique_ptr<Product>> loaded;
     int maxId = 0;
     std::string line;
@@ -82,7 +81,7 @@ bool Catalog::loadFromFile(const std::string& path) {
             maxId = std::max(maxId, id);
             loaded.push_back(std::move(product));
         } catch (...) {
-            continue;  // سطر تالف
+            continue;
         }
     }
 
